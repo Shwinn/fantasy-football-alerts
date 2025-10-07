@@ -52,12 +52,12 @@ Please:
 5. Include the date in the title (use today's date)."""
         
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-5-nano",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ],
-            max_tokens=1500,
+            max_completion_tokens=1500,
             temperature=0.7
         )
         
@@ -96,7 +96,7 @@ def generate_simple_digest(news_items: List[Dict[str, Any]]) -> str:
     sleeper_adds = [item for item in news_items if item.get("source") == "sleeper" and item.get("trend_type") == "add"]
     sleeper_drops = [item for item in news_items if item.get("source") == "sleeper" and item.get("trend_type") == "drop"]
     other_sleeper = [item for item in news_items if item.get("source") == "sleeper" and "trend_type" not in item]
-    fantasypros_items = [item for item in news_items if item.get("source") == "fantasypros"]
+    fantasypros_items = [item for item in news_items if item.get("source") == "fantasypros_scraped"]
     
     if sleeper_adds:
         digest += "## Trending Up (Sleeper)\n\n"
@@ -121,7 +121,12 @@ def generate_simple_digest(news_items: List[Dict[str, Any]]) -> str:
     if fantasypros_items:
         digest += "## FantasyPros News\n\n"
         for item in fantasypros_items:
-            digest += f"- **{item.get('player_name', 'Unknown')}** ({item.get('team', 'Unknown')}) - {item.get('headline', 'No headline')}\n"
+            # Show processed summary if available, otherwise headline
+            content = item.get('summary', item.get('headline', 'No headline'))
+            # Truncate very long summaries
+            if len(content) > 200:
+                content = content[:200] + "..."
+            digest += f"- **{item.get('player_name', 'Unknown')}** ({item.get('team', 'Unknown')}) - {content}\n"
         digest += "\n"
     
     digest += "*(Data aggregated from Sleeper + FantasyPros)*\n"

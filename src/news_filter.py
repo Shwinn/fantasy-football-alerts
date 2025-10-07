@@ -18,12 +18,40 @@ def is_fantasy_relevant(news_item: Dict[str, Any]) -> bool:
     if news_item.get("source") == "sleeper" and "trend_type" in news_item:
         return True
     
+    # FantasyPros articles are always fantasy relevant
+    if news_item.get("source") == "fantasypros_scraped":
+        return True
+    
+    # Check if source is from fantasy football sites
+    source = news_item.get("source", "").lower()
+    if any(fantasy_site in source for fantasy_site in ["fantasy", "pros", "sleeper"]):
+        return True
+    
+    # Check if URL indicates fantasy content
+    url = news_item.get("url", "").lower()
+    if any(fantasy_indicator in url for fantasy_indicator in [
+        "fantasy", "waiver", "start-sit", "sleepers", "busts", 
+        "rankings", "projections", "advice", "analysis"
+    ]):
+        return True
+    
     # Combine headline and summary for keyword checking
     text_to_check = f"{news_item.get('headline', '')} {news_item.get('summary', '')}".lower()
     
     # Check if any fantasy keywords are present
     for keyword in FANTASY_KEYWORDS:
         if keyword.lower() in text_to_check:
+            return True
+    
+    # Check for general fantasy football terms
+    fantasy_terms = [
+        "fantasy football", "fantasy", "waiver wire", "start/sit", 
+        "sleepers", "busts", "rankings", "projections", "advice",
+        "analysis", "pickup", "drop", "trade", "dynasty", "redraft"
+    ]
+    
+    for term in fantasy_terms:
+        if term in text_to_check:
             return True
     
     return False

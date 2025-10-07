@@ -143,46 +143,154 @@ def fetch_sleeper_player_details() -> Dict[str, Any]:
 
 def fetch_fantasypros_news() -> List[Dict[str, Any]]:
     """
-    Fetch NFL news from FantasyPros API.
+    Fetch NFL news from FantasyPros using web scraping.
     
     Returns:
         List of news items from FantasyPros
     """
     try:
-        print("Fetching FantasyPros news...")
+        print("Fetching FantasyPros news via web scraping...")
         
-        # FantasyPros API endpoint for news
-        url = f"{FANTASYPROS_BASE_URL}/news"
+        # Import web scraper
+        from .web_scraper import FantasyProsScraper
         
-        headers = {
-            "x-api-key": FANTASYPROS_API_KEY,
-            "Content-Type": "application/json"
-        }
+        # Initialize scraper
+        scraper = FantasyProsScraper()
         
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
+        # First try to scrape new articles
+        articles = scraper.scrape_fantasypros_articles(max_articles=1000)
         
-        data = response.json()
+        # If no new articles were scraped, load existing articles from files
+        if not articles:
+            print("No new articles scraped, loading existing articles...")
+            articles = load_existing_scraped_articles()
         
-        # Transform FantasyPros data to our format
+        # Transform articles to our format
         fantasypros_news = []
-        for item in data.get("news", []):
+        for article in articles:
+            # Extract player names from title and content
+            player_name = extract_player_name_from_article(article)
+            
+            # Use raw content directly
+            summary = article.get("content", "")
+            if not summary:
+                # Fallback to truncated content
+                summary = article.get("content", "")[:500] + "..." if len(article.get("content", "")) > 500 else article.get("content", "")
+            
             fantasypros_news.append({
-                "player_name": item.get("player_name", "Unknown"),
-                "team": item.get("team", "Unknown"),
-                "position": item.get("position", "Unknown"),
-                "headline": item.get("headline", ""),
-                "summary": item.get("summary", ""),
-                "source": "fantasypros",
-                "timestamp": item.get("timestamp", datetime.now().isoformat())
+                "player_name": player_name,
+                "team": "Unknown",  # Could be enhanced to extract from content
+                "position": "Unknown",  # Could be enhanced to extract from content
+                "headline": article.get("title", ""),
+                "summary": summary,
+                "source": "fantasypros_scraped",
+                "timestamp": article.get("scraped_at", datetime.now().isoformat()),
+                "url": article.get("url", ""),
+                "author": article.get("author", "Unknown"),
+                "content_length": len(article.get("content", ""))
             })
         
-        print(f"Fetched {len(fantasypros_news)} items from FantasyPros")
+        print(f"Fetched {len(fantasypros_news)} items from FantasyPros via scraping")
         return fantasypros_news
         
     except Exception as e:
-        print(f"Error fetching FantasyPros news: {e}")
+        print(f"Error fetching FantasyPros news via scraping: {e}")
         return []
+
+
+def load_existing_scraped_articles() -> List[Dict[str, Any]]:
+    """
+    Load existing scraped articles from the filesystem.
+    
+    Returns:
+        List of article dictionaries
+    """
+    import os
+    import glob
+    
+    articles = []
+    articles_dir = "scraped_articles"
+    
+    if not os.path.exists(articles_dir):
+        return articles
+    
+    # Find all .txt files in the scraped_articles directory
+    pattern = os.path.join(articles_dir, "**", "*.txt")
+    txt_files = glob.glob(pattern, recursive=True)
+    
+    print(f"Found {len(txt_files)} existing article files")
+    
+    for filepath in txt_files:
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Parse the article file format
+            lines = content.split('\n')
+            if len(lines) < 8:
+                continue
+                
+            # Extract metadata
+            title = lines[0].replace('Title: ', '').strip()
+            author = lines[1].replace('Author: ', '').strip()
+            date = lines[2].replace('Date: ', '').strip()
+            url = lines[3].replace('URL: ', '').strip()
+            section = lines[4].replace('Section: ', '').strip()
+            source_url = lines[5].replace('Source URL: ', '').strip()
+            tags = lines[6].replace('Tags: ', '').strip()
+            scraped_at = lines[7].replace('Scraped: ', '').strip()
+            
+            # Find content start (after the separator)
+            content_start = content.find('==================================================')
+            if content_start != -1:
+                article_content = content[content_start + 52:].strip()  # Skip separator
+            else:
+                article_content = content
+            
+            # Only include articles with substantial content
+            if len(article_content) > 100:
+                articles.append({
+                    'title': title,
+                    'author': author,
+                    'date': date,
+                    'url': url,
+                    'section': section,
+                    'source_url': source_url,
+                    'tags': tags.split(', ') if tags else [],
+                    'content': article_content,
+                    'scraped_at': scraped_at
+                })
+                
+        except Exception as e:
+            print(f"Error reading {filepath}: {e}")
+            continue
+    
+    print(f"Loaded {len(articles)} existing articles")
+    return articles
+
+
+def extract_player_name_from_article(article: Dict[str, Any]) -> str:
+    """
+    Extract player name from article title and content.
+    This is a simple implementation - could be enhanced with NLP.
+    """
+    title = article.get("title", "").lower()
+    content = article.get("content", "").lower()
+    
+    # Common NFL player name patterns (simplified)
+    # This could be enhanced with a comprehensive player database
+    common_players = [
+        "mahomes", "allen", "josh allen", "brady", "rodgers", "aaron rodgers",
+        "mccaffrey", "cmc", "henry", "derrick henry", "cook", "dalvin cook",
+        "adams", "davante adams", "hill", "tyreek hill", "kelce", "travis kelce",
+        "kupp", "cooper kupp", "jefferson", "justin jefferson", "chase", "ja'marr chase"
+    ]
+    
+    for player in common_players:
+        if player in title or player in content:
+            return player.title()
+    
+    return "Unknown"
 
 
 def fetch_all_news() -> List[Dict[str, Any]]:
