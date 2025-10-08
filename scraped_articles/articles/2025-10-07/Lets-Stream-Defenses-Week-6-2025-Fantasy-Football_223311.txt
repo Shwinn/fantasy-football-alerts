@@ -1,0 +1,490 @@
+Title: Let’s Stream Defenses: Week 6 (2025 Fantasy Football)
+Author: by Andrew Swanson |  4 min read
+Date: @jacoblawherlin
+URL: https://www.fantasypros.com/2025/10/lets-stream-defenses-week-6-2025-fantasy-football/
+Section: articles
+Source URL: https://www.fantasypros.com/nfl/articles/
+Tags: Articles, Streamers, Weekly Advice, NFL, Waiver Wire NFL
+Scraped: 2025-10-07T22:33:11.381505
+
+==================================================
+
+It has been a fun year so far for us D/ST aficionados, with new rules leading to a lot more action on special teams, and an average of 8.4 teams reaching the 10 fantasy football point threshold each week (in Yahoo scoring). While the new kickoff rules have contributed to the special teams renaissance, D/ST scoring is still primarily about how bad the opposing offense can be, and in particular the opposing quarterback. So let’s check in once again on some of the QB situations that have been in flux:
+Baltimore Ravens
+:
+Cooper Rush
+made his first start in a Ravens uniform last week, in place of the injured
+Lamar Jackson
+, and got clobbered by the
+Texans
+. Rush has long been one of the better backups in the league, and was never known to take very many sacks in his 7 years as the Cowboys’ backup. A good backup is still a backup, and indeed he threw 3 interceptions and led the team to just 10 points last week. The Ravens are a good matchup with low scoring expectations with Rush, albeit with low sack expectations too. You should of course never start a defense against
+Lamar Jackson
+once he returns, which might be this week.
+Cincinnati Bengals
+: After four weeks of misery with
+Jake Browning
+, the Bengals have traded for
+Joe Flacco
+for the cost of turning a 2026 5th round pick into a 6th. I don’t expect this to be much of an improvement. The Browns were a very good matchup with Flacco, and while he will have much better receivers in Cincinnati, he’s moving from a merely bottom-5 offensive line to the actual worst offensive line in the league.
+Cleveland Browns
+: Third-round pick
+Dillon Gabriel
+made his first start for the Browns last week, following four bad games from
+Joe Flacco
+. Gabriel displayed some promising signs against a good
+Vikings
+defense in London, scoring two touchdowns while avoiding turnovers, and taking only 2 sacks. But two TDs and a field goal is not a lot of scoring – the Browns still haven’t exceeded 17 points this season. If Gabriel can keep the sacks and turnovers down the Browns will cease to be a very good matchup, but the odds are against him. There are always growing pains with rookie QBs, and they need to prove it a few times before I stop targeting them with defenses.
+New Orleans Saints
+:
+Spencer Rattler
+has taken a step forward as the Saints’ first-choice starter this year. He has notably cleaned up the turnovers with just one interception this year, but still leads a pretty low-powered offense. The Saints are still a solid defense matchup, but don’t offer the kind of turnover upside we saw last year.
+New York Giants
+:
+Jaxson Dart
+made his second start last week against a Saints defense that’s bottom-10 in points allowed per game. He cleaned up the sacks, taking just 1 compared to 5 against the Chargers in his debut, but that’s where the improvements end. Dart recorded his first 3 turnovers of the season – a pair of interceptions and a lost fumble – and his two touchdowns were the Giants’ only points. The injury to
+Malik Nabers
+has cooled off the hype around Dart and
+Cam Skattebo
+, and the Giants remain a good matchup for defenses.
+San Francisco 49ers
+:
+Mac Jones
+has seen a career resurgence in 3 games while
+Brock Purdy
+has been injured. Purdy might be back this week, and it’s still his Job. But the
+Mac Jones
+experience has been a good illustration of the fact that Kyle Shanahan’s offense is never a good defense matchup, regardless of who’s under center.
+Streaming Defenses: Fantasy Football Waiver Wire & Start/Sit Advice (Week 6)
+We have only two teams on bye this week (the
+Vikings
+and
+Texans
+), and some good streaming options, especially if you can stomach picking a defense from the Titans-Raiders game. Rostership numbers are from Yahoo, before Week 6 waivers have cleared. You can find me on
+Bluesky
+.
+Rank
+Team
+Vs.
+Vs. QB
+PA
+Sacks
+Turnovers
+FPTS
+Rost%
+The Start Them With Confidence Tier
+1
+GB
+CIN
+Jake Browning
+14.75
+2.6
+1.4
+8.05
+47%
+2
+DEN
+@
+NYJ
+Justin Fields
+18
+3.3
+1.2
+7.38
+91%
+3
+PIT
+CLE
+Dillon Gabriel
+16.75
+2.3
+1.2
+6.68
+72%
+The Still a Fine Choice Tier
+4
+PHI
+@
+NYG
+Jaxson Dart
+17
+2.4
+1.2
+6.63
+93%
+5
+LV
+TEN
+Cam Ward
+18.5
+2.7
+1.2
+6.59
+3%
+6
+IND
+ARI
+Kyler Murray
+20.5
+2.4
+1.2
+6.04
+49%
+7
+LAR
+@
+BAL
+Cooper Rush
+18.5
+2.2
+1.1
+5.86
+54%
+8
+LAC
+@
+MIA
+Tua Tagovailoa
+19.5
+2.0
+1.3
+5.85
+55%
+9
+NE
+@
+NO
+Spencer Rattler
+21
+2.5
+1.2
+5.82
+17%
+10
+TEN
+@
+LV
+Geno Smith
+23
+2.4
+1.3
+5.73
+1%
+The Surely You Can Find Something Better Tier
+11
+WAS
+CHI
+Caleb Williams
+22.75
+2.8
+1.1
+5.70
+12%
+12
+NO
+NE
+Drake Maye
+24.5
+2.8
+1.2
+5.67
+13%
+13
+DAL
+@
+CAR
+Bryce Young
+23
+2.3
+1.2
+5.46
+9%
+14
+CLE
+@
+PIT
+Aaron Rodgers
+21.75
+2.3
+1.1
+5.42
+59%
+15
+MIA
+LAC
+Justin Herbert
+24
+2.3
+1.2
+5.22
+5%
+16
+JAC
+SEA
+Sam Darnold
+22.5
+1.8
+1.3
+5.18
+13%
+17
+TB
+SF
+Brock Purdy
+22.25
+1.8
+1.2
+5.05
+9%
+18
+SEA
+@
+JAC
+Trevor Lawrence
+24
+1.8
+1.3
+4.95
+63%
+19
+NYG
+PHI
+Jalen Hurts
+24.5
+2.2
+1.1
+4.72
+17%
+20
+KC
+DET
+Jared Goff
+24.5
+1.8
+1.2
+4.64
+62%
+21
+BAL
+LAR
+Matthew Stafford
+26
+1.8
+1.3
+4.55
+64%
+22
+ARI
+@
+IND
+Daniel Jones
+27
+2.2
+1.2
+4.54
+82%
+23
+SF
+@
+TB
+Baker Mayfield
+25.25
+1.7
+1.3
+4.53
+20%
+24
+DET
+@
+KC
+Patrick Mahomes II
+26
+1.9
+1.2
+4.48
+95%
+25
+BUF
+@
+ATL
+Michael Penix Jr.
+22.5
+1.3
+1.2
+4.39
+84%
+26
+ATL
+BUF
+Josh Allen
+26
+1.8
+1.2
+4.39
+3%
+27
+CAR
+DAL
+Dak Prescott
+26.5
+1.5
+1.2
+4.02
+1%
+28
+CHI
+@
+WAS
+Jayden Daniels
+27.25
+1.9
+1.1
+3.99
+4%
+29
+NYJ
+DEN
+Bo Nix
+25.5
+1.1
+1.2
+3.76
+11%
+30
+CIN
+@
+GB
+Jordan Love
+29.25
+1.5
+1.2
+3.41
+2%
+Matchups
+GB
+vs
+CIN
+: The Bengals have traded for
+Joe Flacco
+. My current assumption is that we’ll get one more week of
+Jake Browning
+before Flacco takes over the starting job. In the four games where Browning’s seen the field, every opposing defense has finished 8th or better in fantasy. While he did throw some garbage time touchdowns to rescue
+Ja’Marr Chase
+and
+Tee Higgins
+in fantasy last week, Browning was
+bad.
+He’s got a big arm and some scramble-ability, but just can’t seem to read the field very well and as a result, thew some truly bone-headed interceptions. The Packers should have a field day at home.
+DEN
+@
+NYJ
+: Like the Bengals, the Jets have their own 4-game streak of allowing the opposing defense to finish in the top 10 in fantasy. Last week
+Justin Fields
+was sacked 5 times by a Cowboys defense that had 5 total sacks in the previous 4 games combined. Now he gets to face Nik Bonitto and the Broncos, who both lead the league in sacks by a significant margin. Bonitto has 7 sacks while several players are tied for 2nd with 5, and the Broncos as a whole have 21 sacks, while the second-place Lions have 16. Denver is a defense you start in most matchups, and this one is close to as good as it gets.
+PIT
+vs
+CLE
+: Browns QB
+Dillon Gabriel
+played a clean game in London for his first NFL start. He threw a pair of touchdowns to his tight ends, and avoided turnovers while taking only 2 sacks from a pretty good
+Vikings
+defense. That’s encouraging for the Browns, but at the end of the day it was only 17 points, and it was only one game. I’m going to need to see it a few more times before I stop playing good defenses like the Steelers against Gabriel. Last week I said a similar thing about
+Jaxson Dart
+after a turnover-free NFL debut against a good Chargers defense, and he did indeed follow that up with 2 interceptions against a less-good Saints defense. The Steelers’ defense is fresh off a bye last week, and two big turnover games prior to that. They’re an easy start at home.
+PHI
+@
+NYG
+: The Eagles suffered the upset at the hands of the future Super Bowl champion Broncos last week, but this week they have an excellent bounce-back opportunity. In his second career start and first without
+Malik Nabers
+on the field,
+Jaxson Dart
+thew a pair of interceptions to the Saints, while taking just one sack. The Eagle’s defense has underperformed this year, but they’ve still turned in some big fantasy days with special teams plays. I expect low scoring and a good but not great outlook for sacks and turnovers.
+LV
+vs
+TEN
+: What happens when an easily stoppable force meets a very movable object? The Titans picked up the first win of
+Cam Ward
+‘s career last week in slapstick fashion, thanks largely to some ridiculous mistakes from the opposing Cardinals.
+Cam Ward
+‘s performance was basically the same as the prior week – an interception with no touchdowns and just a couple sacks, albeit with more passing yards this time. The Raiders have not been a viable fantasy defense thus far, but they have exclusively faced good offenses. With a weak opponent and a good run game, it would not surprise me to see them dominate time of possession here. The Raiders a reasonable streamer and available in basically every league.
+IND
+vs
+ARI
+: The Cardinals made winners of the Titans defense, thanks in part to Yahoo’s puzzling decision to record that interception-fumble-end zone recovery by
+Tyler Lockett
+as a defensive touchdown for the Titans, despite their offense being on the field. But the Cardinals made some big mistakes on offense too, including
+Emari Demercado
+‘s goal-line celebration fumble, and a hilarious fumble where an early shotgun snap hit
+Kyler Murray
+in the face. The Colts meanwhile have been rolling, unsurprisingly dominating the Raiders 40-6 last week. The Cardinals aren’t all that much better than the Raiders, so I expect a similar result.
+LAR
+@
+BAL
+: It is unclear at this point if
+Lamar Jackson
+will be able to return to action this week. As of now I expect
+Cooper Rush
+to start for the Ravens again. It goes without saying that you should not start
+any
+defense against Jackson, but the Rams are a pretty good defense that would be happy to face Rush after a tough recent schedule. Last week Rush may have managed to take only one sack from a good
+Texans
+defense, but the trade-off was throwing three interceptions instead. The end result was a measly 10 team points to make the
+Texans
+a top-5 fantasy defense for the week. The Rams should expect to do similarly if Lamar can’t play.
+LAC
+@
+MIA
+:
+Tua Tagovailoa
+has turned in some solid stat sheets this year, but they’ve had some very good matchups, and still only achieved a 1-4 record. It’s about to get a lot harder with two excellent defenses coming up: the Chargers this week, then the Browns in Week 7. Coach Mike McDaniel might already be on the hot seat, and I expect the next couple weeks to expose how dysfunctional the Dolphins truly are.
+NE
+@
+NO
+: Saints QB
+Spencer Rattler
+has noticeably improved since his rookie season last year, but that was a pretty low starting point. He’s done well to limit turnovers, but still operates a low-powered offense overall. They have not exceeded 21 points on offense, with last week’s high-water mark of 26 points including a fumble six. The Patriots offense has gotten a lot of credit with
+Drake Maye
+looking like a franchise QB, but their defense has quietly been top-10 in terms of points allowed per game. I expect little scoring from the Saints this week, but it’s increasingly looking like the sacks & turnovers upside is limited with Rattler.
+TEN
+@
+LV
+:
+Geno Smith
+is the worst quarterback in football right now. Last week against the Colts he recorded his third multi-interception game of the season, bringing his total to a league-leading 9. No other every-week starter has more than 5. He’s also (tied for) top-3 in sacks taken with 16, despite taking none against the Bears in Week 4. The Titans also suck, but the offense is their worse half. The defense has performed admirably given their schedule and the number of short fields they’ve had to deal with thanks to offensive turnovers. If this game stays close and Geno has to throw, it could be another big turnover day. The Titans are a viable low-end streamer and available in 99% of leagues.
+Subscribe
+:
+Apple Podcasts
+|
+Spotify
+|
+Google Podcasts
+|
+Stitcher
+|
+SoundCloud
+|
+iHeartRadio
+Articles
+NFL
+Streamers
+Waiver Wire NFL
+Weekly Advice
+YouTube
+281                                                K
+Follow
+More Articles
+Fantasy Football Kicker Rankings & Start/Sit Advice (Week 6)
+by
+Andrew Swanson
+|  4 min read
+Fantasy Football Week 6 Running Back Rankings (2025)
+by
+FantasyPros Staff
+|  2 min read
+Fantasy Football Week 6 Wide Receiver Rankings (2025)
+by
+FantasyPros Staff
+|  2 min read
+Players to Buy Low & Sell High in Week 6 (Fantasy Football)
+by
+FantasyPros Staff
+|  8 min read
