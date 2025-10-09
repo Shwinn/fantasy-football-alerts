@@ -163,7 +163,9 @@ def fetch_fantasypros_news() -> List[Dict[str, Any]]:
         # If no new articles were scraped, load existing articles from files
         if not articles:
             print("No new articles scraped, loading existing articles...")
-            articles = load_existing_scraped_articles()
+            all_articles = load_existing_scraped_articles()
+            # Filter to today's articles only
+            articles = filter_news_by_date(all_articles)
         
         # Transform articles to our format
         fantasypros_news = []
@@ -198,12 +200,53 @@ def fetch_fantasypros_news() -> List[Dict[str, Any]]:
         return []
 
 
+def filter_news_by_date(news_items: List[Dict[str, Any]], target_date: str = None) -> List[Dict[str, Any]]:
+    """
+    Filter news items to only include those from a specific date.
+    
+    Args:
+        news_items: List of news items to filter
+        target_date: Date in YYYY-MM-DD format. If None, uses today's date.
+        
+    Returns:
+        List of news items from the target date only
+    """
+    if target_date is None:
+        target_date = datetime.now().strftime("%Y-%m-%d")
+    
+    filtered_items = []
+    
+    for item in news_items:
+        # Check if the item is from the target date based on timestamp or scraped_at
+        item_date = None
+        if 'timestamp' in item:
+            try:
+                # Parse timestamp to get date
+                item_date = datetime.fromisoformat(item['timestamp'].replace('Z', '+00:00')).strftime("%Y-%m-%d")
+            except:
+                pass
+        elif 'scraped_at' in item:
+            try:
+                # Parse scraped_at to get date
+                item_date = datetime.fromisoformat(item['scraped_at'].replace('Z', '+00:00')).strftime("%Y-%m-%d")
+            except:
+                pass
+        
+        # Include item if it's from the target date or if we can't determine the date (fallback)
+        if item_date == target_date or item_date is None:
+            filtered_items.append(item)
+    
+    print(f"Filtered to {len(filtered_items)} items from {target_date} out of {len(news_items)} total items")
+    return filtered_items
+
+
 def load_existing_scraped_articles() -> List[Dict[str, Any]]:
     """
     Load existing scraped articles from the filesystem.
+    Note: This function loads ALL articles and should be filtered by date externally.
     
     Returns:
-        List of article dictionaries
+        List of article dictionaries from all dates
     """
     import os
     import glob
@@ -218,7 +261,7 @@ def load_existing_scraped_articles() -> List[Dict[str, Any]]:
     pattern = os.path.join(articles_dir, "**", "*.txt")
     txt_files = glob.glob(pattern, recursive=True)
     
-    print(f"Found {len(txt_files)} existing article files")
+    print(f"Found {len(txt_files)} existing article files from all dates")
     
     for filepath in txt_files:
         try:
@@ -295,10 +338,10 @@ def extract_player_name_from_article(article: Dict[str, Any]) -> str:
 
 def fetch_all_news() -> List[Dict[str, Any]]:
     """
-    Fetch news from all sources and combine them.
+    Fetch news from all sources, combine them, and filter to today's date only.
     
     Returns:
-        Combined list of news items from all sources
+        Combined list of news items from all sources, filtered to today only
     """
     all_news = []
     
@@ -311,4 +354,8 @@ def fetch_all_news() -> List[Dict[str, Any]]:
     all_news.extend(fantasypros_news)
     
     print(f"Total news items fetched: {len(all_news)}")
-    return all_news
+    
+    # Apply centralized date filtering to today's articles only
+    today_news = filter_news_by_date(all_news)
+    
+    return today_news

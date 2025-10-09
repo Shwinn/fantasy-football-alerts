@@ -1,9 +1,10 @@
 """LLM integration for generating fantasy insights and recommendations."""
 
 import json
+from datetime import datetime
 from typing import List, Dict, Any
 from openai import OpenAI
-from .config import OPENAI_API_KEY
+from .config import OPENAI_API_KEY, LLM_TIMEOUT_SECONDS
 
 
 def generate_digest(news_items: List[Dict[str, Any]]) -> str:
@@ -11,7 +12,7 @@ def generate_digest(news_items: List[Dict[str, Any]]) -> str:
     Generate a fantasy digest using OpenAI's API.
     
     Args:
-        news_items: List of fantasy-relevant news items
+        news_items: List of fantasy-relevant news items (already filtered to today's date)
         
     Returns:
         Generated digest as markdown string
@@ -21,7 +22,7 @@ def generate_digest(news_items: List[Dict[str, Any]]) -> str:
         import httpx
         
         # Create a clean HTTP client without proxy settings
-        http_client = httpx.Client(timeout=30.0)
+        http_client = httpx.Client(timeout=LLM_TIMEOUT_SECONDS)
         
         # Initialize OpenAI client with custom HTTP client
         client = OpenAI(api_key=OPENAI_API_KEY, http_client=http_client)
@@ -67,6 +68,10 @@ Please:
         if "quota" in str(e).lower() or "429" in str(e):
             print("OpenAI quota exceeded. Falling back to simple digest...")
             return generate_simple_digest(news_items)
+        # If it's a timeout error, fall back to simple digest
+        elif "timeout" in str(e).lower() or "timed out" in str(e).lower():
+            print(f"LLM request timed out after {LLM_TIMEOUT_SECONDS} seconds. Falling back to simple digest...")
+            return generate_simple_digest(news_items)
         return f"# Error Generating Digest\n\nThere was an error generating the digest: {e}"
 
 
@@ -75,13 +80,11 @@ def generate_simple_digest(news_items: List[Dict[str, Any]]) -> str:
     Generate a simple digest without LLM (fallback).
     
     Args:
-        news_items: List of fantasy-relevant news items
+        news_items: List of fantasy-relevant news items (already filtered to today's date)
         
     Returns:
         Simple digest as markdown string
     """
-    from datetime import datetime
-    
     date_str = datetime.now().strftime("%B %d, %Y")
     
     digest = f"# NFL Daily Fantasy Digest — {date_str}\n\n"

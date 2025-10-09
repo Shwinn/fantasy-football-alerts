@@ -40,3 +40,6 @@ FANTASY_KEYWORDS = [
 # Output configuration
 OUTPUT_DIR = "digests"
 DIGEST_FILENAME_TEMPLATE = "daily_digest_{date}.md"
+
+# LLM Configuration
+LLM_TIMEOUT_SECONDS = 60  # 60 seconds timeout for LLM requests
